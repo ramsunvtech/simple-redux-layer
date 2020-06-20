@@ -1,5 +1,13 @@
 import React from 'react';
 
+// `Material` Components.
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+
+// Stylesheet.
+import useStyles from './Part.style';
+
 const Part = ({
   name,
   id,
@@ -8,12 +16,24 @@ const Part = ({
   name: string;
   id: number;
   status: string;
-}) => (
-  <div style={{ border: '1px solid black' }}>
-    <p>{name}</p>
-    <p>ID: {id}</p>
-    <p>Status: {status}</p>
-  </div>
-);
+}) => {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.root}>
+      <CardContent>
+        <Typography variant="h5" component="h2">
+          {name}
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          ID: {id}
+        </Typography>
+        <Typography variant="body2" component="p">
+          Status: {status}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default Part;
