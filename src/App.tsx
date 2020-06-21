@@ -13,12 +13,11 @@ import Header from './components/Header';
 import theme from './theme/index';
 
 // Store Lib.
-import { createStore } from './lib/index';
+import { createStore } from './lib/customRedux';
 
 function App() {
 
   useEffect(() => {
-    console.log('create store')
     createStore();
   }, []);
 
