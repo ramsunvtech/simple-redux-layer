@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+// `Hooks`.
+import { useHistory } from "react-router-dom";
+
 // `Material` Components.
 import TextField from '@material-ui/core/TextField';
 import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 
-// `Hooks`.
-import { useHistory } from "react-router-dom";
+// Tiny Redux.
+import { tinyConnect } from '../lib/customReactRedux';
 
-const CreatePart = () => {
+const CreatePart = ({ createPart }) => {
   const history = useHistory();
   const [checkStatus, setCheckStatus] = useState(true);
   const [partName, setPartName] = useState('');
@@ -25,11 +28,9 @@ const CreatePart = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
  
-    if (window && window.appStore && window.appStore.parts, window.appStore.parts.items) {
-      window.appStore.parts.items.push({
-        name: partName, id: uuidv4(), status: 'Checked In'
-      });
-    }
+    createPart({
+      name: partName, id: uuidv4(), status: 'Checked In'
+    });
     history.push('/');
   };
 
@@ -50,4 +51,17 @@ const CreatePart = () => {
   );
 };
 
-export default CreatePart;
+const mapStateToProps = (state) => {
+  return {
+    parts: state.parts.items,
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    createPart: (part) => dispatch({ type: 'CREATE_PARTS', part }),
+  }
+}
+
+export default tinyConnect(mapStateToProps, mapDispatchToProps)(CreatePart);
