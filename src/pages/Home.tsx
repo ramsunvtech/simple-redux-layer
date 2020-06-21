@@ -7,30 +7,12 @@ import Grid from '@material-ui/core/Grid';
 // Stylesheet.
 import useStyles from './Home.style';
 
-
 // Tiny Redux.
-import { getStore } from '../lib/customRedux';
-// import { tinyConnect } from '../lib/customReactRedux';
+import { tinyConnect } from '../lib/customReactRedux';
 
-const tinyConnect = (Component): React.FC => ({
-  loading,
-  ...props
-}) => {
-  return (
-    <Component {...props as P} />
-  );
-}
-
-const Home = () => {
+const Home = ({ parts = [] }) => {
   const classes = useStyles();
-  const [partItemList, setPartItemList] = useState([]);
-
-  useEffect(() => {
-    const { parts = {} } = getStore();
-    const { items = [] } = parts;
-
-    setPartItemList(items);
-  }, [window.appStore]);
+  const [partItemList] = useState(parts);
 
   return (
     <Grid container>
@@ -45,11 +27,11 @@ const Home = () => {
   );
 };
 
-export default tinyConnect(Home);
+// export default tinyConnect(Home);
 
 const mapStateToProps = (state) => {
   return {
-    parts: state.parts,
+    parts: state.parts.items,
   };
 }
 
@@ -60,4 +42,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-// export default tinyConnect(Home);
+export default tinyConnect(mapStateToProps)(Home);
