@@ -15,36 +15,27 @@ const CreatePart = () => {
   const [partName, setPartName] = useState('');
 
   const handleSwitch = (event: any) => {
-    console.log(event.target.name);
-    console.log(event.target.checked);
     setCheckStatus(!checkStatus);
   };
   
   const handleNameChange = (event: any) => {
-    console.log(event.target.value);
     setPartName(event.target.value);
   };
 
   const onSubmit = (e: any) => {
-    // alert('form submit');
     e.preventDefault();
-    const { items = [] } = JSON.parse(window.sessionStorage.getItem('parts'));
-
-    const parts = {
-      items: [
-        ...items,
-        {
-          name: partName, id: uuidv4(), status: 'Checked In'
-        }
-      ]
-    };
-    window.sessionStorage.setItem('parts', JSON.stringify(parts));
+ 
+    if (window && window.appStore && window.appStore.parts, window.appStore.parts.items) {
+      window.appStore.parts.items.push({
+        name: partName, id: uuidv4(), status: 'Checked In'
+      });
+    }
     history.push('/');
   };
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
-      <TextField id="name" label="Name" value={partName} style={{color: 'black'}} color="secondary" onChange={handleNameChange} />
+      <TextField id="name" label="Name" value={partName} InputProps={{ style: { color: 'black' } }} color="secondary" onChange={handleNameChange} />
       <Switch
         checked={checkStatus}
         onChange={handleSwitch}
