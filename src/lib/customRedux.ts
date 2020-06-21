@@ -8,12 +8,17 @@ export const createStore = () => {
     ],
   };
 
-  // window.sessionStorage.setItem('parts', JSON.stringify(parts));
   window.appStore = {
     parts: initialState,
   };
 }
 
 export const getStore = () => {
-  return window.appStore || {};
+  return window.appStore;
+};
+
+export const updateStore = (reducer) => {
+  return window.appStore = {
+    ...reducer,
+  };
 };
