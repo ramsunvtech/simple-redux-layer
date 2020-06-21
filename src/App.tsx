@@ -15,12 +15,10 @@ import theme from './theme/index';
 // Store Lib.
 import { createStore } from './lib/customRedux';
 
+// Creating Store.
+createStore();
+
 function App() {
-
-  useEffect(() => {
-    createStore();
-  }, []);
-
   return (
     <Router>
       <ThemeProvider theme={theme}>
