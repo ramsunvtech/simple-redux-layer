@@ -8,26 +8,36 @@ import Grid from '@material-ui/core/Grid';
 import useStyles from './Home.style';
 
 // Tiny Redux.
-import { tinyConnect } from '../lib/customReactRedux';
+import { tinyConnect } from '../lib/tinyReactRedux';
 
-const Home = ({ parts = [] }) => {
+// `Actions`.
+import * as actionTypes from '../store/actions/actionTypes';
+
+const Home = ({ loadParts = () => {}, parts = [] }) => {
   const classes = useStyles();
-  const [partItemList] = useState(parts);
+  const [partItemList, setPartList] = useState([]);
+
+  useEffect(() => {
+    loadParts();
+    setPartList(parts);
+  }, []);
+
+  const getStatusText = (status) => {
+    return (status) ? 'Checked In' : 'Checked Out';
+  }
 
   return (
     <Grid container>
       {partItemList.map((partItem: object) => {
         return (
           <Grid item xl={3} className={classes.item}>
-            <Part name={partItem.name} id={partItem.id} status={partItem.status} />
+            <Part name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
           </Grid>
         );
       })}
     </Grid>
   );
 };
-
-// export default tinyConnect(Home);
 
 const mapStateToProps = (state) => {
   return {
@@ -37,9 +47,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // dispatching plain actions
-    loadParts: () => dispatch({ type: 'LOAD_PARTS' }),
+    loadParts: () => dispatch({ type: actionTypes.LOAD_PARTS }),
   }
 }
 
-export default tinyConnect(mapStateToProps)(Home);
+export default tinyConnect(mapStateToProps, mapDispatchToProps)(Home);
