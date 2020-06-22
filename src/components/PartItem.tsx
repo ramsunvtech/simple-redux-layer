@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
 // Stylesheet.
-import useStyles from './Part.style';
+import useStyles from './PartItem.style';
 
 const Part = ({
   name,
