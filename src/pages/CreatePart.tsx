@@ -10,7 +10,10 @@ import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 
 // Tiny Redux.
-import { tinyConnect } from '../lib/customReactRedux';
+import { tinyConnect } from '../lib/tinyReactRedux';
+
+// `Actions`.
+import * as actionTypes from '../store/actions/actionTypes';
 
 const CreatePart = ({ createPart }) => {
   const history = useHistory();
@@ -29,7 +32,7 @@ const CreatePart = ({ createPart }) => {
     e.preventDefault();
  
     createPart({
-      name: partName, id: uuidv4(), status: 'Checked In'
+      name: partName, id: uuidv4(), status: checkStatus
     });
     history.push('/');
   };
@@ -59,8 +62,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // dispatching plain actions
-    createPart: (part) => dispatch({ type: 'CREATE_PARTS', part }),
+    createPart: (partItem) => dispatch({ type: actionTypes.CREATE_PART, partItem }),
   }
 }
 
