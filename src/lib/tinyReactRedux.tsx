@@ -1,5 +1,5 @@
 import React from 'react';
-import { getStore, updateStore } from './customRedux';
+import { getStore, updateStore, dispatch } from './tinyRedux';
 
 export const tinyConnect = <DefaultProps extends {}>(
   mapStateToProps: Function, mapDispatchToProps: Function
@@ -8,29 +8,7 @@ export const tinyConnect = <DefaultProps extends {}>(
 ) => {
   return class ComponentWithStore extends React.Component<TProps> {
     render() {
-      function reducer(action) {
-        switch (action.type) {
-          case 'CREATE_PARTS':
-            return {
-              items: [
-                ...getStore().parts.items,
-                action.part
-              ]
-            };
-          default:
-            return state
-        }
-      }
-
-      function dispatch(action) {
-        const parts = {
-          parts: reducer(action),
-        };
-
-        updateStore(parts);
-      }
-
-      const mappedStateProps = mapStateToProps(getStore());
+      const mappedStateProps = mapStateToProps && mapStateToProps(getStore());
       const mappedDispatchProps = mapDispatchToProps && mapDispatchToProps(dispatch);
 
       return (
