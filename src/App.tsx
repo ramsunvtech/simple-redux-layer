@@ -12,11 +12,11 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import theme from './theme/index';
 
-// Store Lib.
-import { createStore } from './lib/customRedux';
+// Store Libs.
+import store from './store/index';
 
-// Creating Store.
-createStore();
+// Initialize Store.
+store.initializeStore();
 
 function App() {
   return (
