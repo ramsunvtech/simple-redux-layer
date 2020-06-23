@@ -22,7 +22,7 @@ const Part = ({
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant="h5" component="h2"  data-testid="name" >
           {name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
