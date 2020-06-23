@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PartItem from '../components/PartItem';
 
 // `Material` Components.
@@ -24,9 +24,11 @@ interface HomePageProps {
 
 const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
   const classes = useStyles();
+  const [partItemList, setPartList] = useState<Part[]>([]);
 
   useEffect(() => {
     loadParts();
+    setPartList(parts);
   }, []);
 
   const getStatusText = (status: boolean) => {
@@ -35,7 +37,7 @@ const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
 
   return (
     <Grid container>
-      {parts.map((partItem: Part) => {
+      {partItemList.map((partItem: Part) => {
         return (
           <Grid item xl={3} lg={2} className={classes.item}>
             <PartItem name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
