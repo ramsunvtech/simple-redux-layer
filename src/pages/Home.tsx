@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Part from '../components/Part';
+import React, { useEffect } from 'react';
+import PartItem from '../components/PartItem';
 
 // `Material` Components.
 import Grid from '@material-ui/core/Grid';
@@ -13,25 +13,32 @@ import { tinyConnect } from '../lib/tinyReactRedux';
 // `Actions`.
 import * as actionTypes from '../store/actions/actionTypes';
 
-const Home = ({ loadParts = () => {}, parts = [] }) => {
+// `Models`.
+import Part from '../models/Part';
+import { Store } from '../models/Store';
+
+interface HomePageProps {
+  loadParts: () => Function;
+  parts: Part[];
+}
+
+const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
   const classes = useStyles();
-  const [partItemList, setPartList] = useState([]);
 
   useEffect(() => {
     loadParts();
-    setPartList(parts);
   }, []);
 
-  const getStatusText = (status) => {
+  const getStatusText = (status: boolean) => {
     return (status) ? 'Checked In' : 'Checked Out';
   }
 
   return (
     <Grid container>
-      {partItemList.map((partItem: object) => {
+      {parts.map((partItem: Part) => {
         return (
-          <Grid item xl={3} className={classes.item}>
-            <Part name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
+          <Grid item xl={3} lg={2} className={classes.item}>
+            <PartItem name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
           </Grid>
         );
       })}
@@ -39,13 +46,13 @@ const Home = ({ loadParts = () => {}, parts = [] }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: Store) => {
   return {
     parts: state.parts.items,
   };
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: Function) => {
   return {
     loadParts: () => dispatch({ type: actionTypes.LOAD_PARTS }),
   }
