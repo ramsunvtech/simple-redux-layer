@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 // `Hooks`.
 import { useHistory } from "react-router-dom";
@@ -21,11 +20,9 @@ import * as actionTypes from '../store/actions/actionTypes';
 // Stylesheet.
 import useStyles from './CreatePart.style';
 
-interface Part {
-  name: string;
-  id: number;
-  status: boolean;
-};
+// `Models`.
+import Part from '../models/Part';
+import { Store } from '../models/Store';
 
 interface CreatePartPageProps {
   createPart: (part: Part) => void;
@@ -37,19 +34,19 @@ const CreatePart: React.FC<CreatePartPageProps> = ({ createPart }) => {
   const [checkStatus, setCheckStatus] = useState(true);
   const [partName, setPartName] = useState('');
 
-  const handleSwitch = (event: any) => {
+  const handleSwitch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCheckStatus(!checkStatus);
   };
 
-  const handleNameChange = (event: any) => {
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPartName(event.target.value);
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     createPart({
-      name: partName, id: uuidv4(), status: checkStatus
+      name: partName, id: Date.now(), status: checkStatus
     });
     history.push('/');
   };
@@ -101,7 +98,7 @@ const CreatePart: React.FC<CreatePartPageProps> = ({ createPart }) => {
   );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: Store) => {
   return {
     parts: state.parts.items,
   };
