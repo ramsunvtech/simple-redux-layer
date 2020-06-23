@@ -1,9 +1,9 @@
 import React from 'react';
-import { getStore, updateStore, dispatch } from './tinyRedux';
+import { getStore, dispatch } from './tinyRedux';
 
 export const tinyConnect = <DefaultProps extends {}>(
   mapStateToProps: Function, mapDispatchToProps: Function
-): InferableHOC<DefaultProps> => <TProps extends {}>(
+) => <TProps extends {}>(
   Component: React.ComponentType<TProps & DefaultProps>
 ) => {
   return class ComponentWithStore extends React.Component<TProps> {
