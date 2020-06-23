@@ -3,42 +3,42 @@ import palette from './palette';
 export default {
   h1: {
     color: palette.text.secondary,
-    fontWeight: 'bold',
+    fontWeight: 400,
     fontSize: '18px',
     letterSpacing: '-0.24px',
     lineHeight: '22px'
   },
   h2: {
     color: palette.text.secondary,
-    fontWeight: 'normal',
+    fontWeight: 500,
     fontSize: '29px',
     letterSpacing: '-0.24px',
     lineHeight: '32px'
   },
   h3: {
     color: palette.text.secondary,
-    fontWeight: 'normal',
+    fontWeight: 500,
     fontSize: '24px',
     letterSpacing: '-0.06px',
     lineHeight: '28px'
   },
   h4: {
     color: palette.text.secondary,
-    fontWeight: 'normal',
+    fontWeight: 500,
     fontSize: '20px',
     letterSpacing: '-0.06px',
     lineHeight: '24px'
   },
   h5: {
     color: palette.text.secondary,
-    fontWeight: 'normal',
+    fontWeight: 500,
     fontSize: '16px',
     letterSpacing: '-0.05px',
     lineHeight: '20px'
   },
   h6: {
     color: palette.text.primary,
-    fontWeight: 'normal',
+    fontWeight: 500,
     fontSize: '14px',
     letterSpacing: '-0.05px',
     lineHeight: '20px'
@@ -51,7 +51,7 @@ export default {
   },
   subtitle2: {
     color: palette.text.secondary,
-    fontWeight: 'normal',
+    fontWeight: 400,
     fontSize: '14px',
     letterSpacing: '-0.05px',
     lineHeight: '21px'
@@ -81,9 +81,10 @@ export default {
   overline: {
     color: palette.text.secondary,
     fontSize: '11px',
-    fontWeight: 'normal',
+    fontWeight: 400,
     letterSpacing: '0.33px',
     lineHeight: '13px',
-    textTransform: 'uppercase'
   }
 };
+
+
