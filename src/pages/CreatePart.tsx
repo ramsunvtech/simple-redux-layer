@@ -22,7 +22,6 @@ import useStyles from './CreatePart.style';
 
 // `Models`.
 import Part from '../models/Part';
-import { Store } from '../models/Store';
 
 interface CreatePartPageProps {
   createPart: (part: Part) => void;
@@ -98,16 +97,10 @@ const CreatePart: React.FC<CreatePartPageProps> = ({ createPart }) => {
   );
 };
 
-const mapStateToProps = (state: Store) => {
-  return {
-    parts: state.parts.items,
-  };
-}
-
 const mapDispatchToProps = (dispatch: Function) => {
   return {
     createPart: (partItem: Part) => dispatch({ type: actionTypes.CREATE_PART, partItem }),
   }
 }
 
-export default tinyConnect(mapStateToProps, mapDispatchToProps)(CreatePart);
+export default tinyConnect(() => {}, mapDispatchToProps)(CreatePart);
