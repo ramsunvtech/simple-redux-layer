@@ -22,7 +22,7 @@ interface HomePageProps {
   parts: Part[];
 }
 
-const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
+export const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
   const classes = useStyles();
   const [partItemList, setPartList] = useState<Part[]>([]);
 
@@ -36,11 +36,11 @@ const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
   }
 
   return (
-    <Grid container>
+    <Grid container data-testid="home">
       {partItemList.map((partItem: Part) => {
         return (
           <Grid item xl={3} lg={2} className={classes.item}>
-            <PartItem name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
+            <PartItem data-testid="item" name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
           </Grid>
         );
       })}
