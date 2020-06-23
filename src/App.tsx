@@ -20,7 +20,7 @@ store.initializeStore();
 
 function App() {
   return (
-    <Router>
+    <Router basename="/simple-redux-layer/">
       <ThemeProvider theme={theme}>
         <div className="App">
           <Header />
