@@ -1,18 +1,19 @@
-import { v4 as uuidv4 } from 'uuid';
-
 // Actions.
 import * as actionTypes from '../actions/actionTypes';
 
-const initialState = {
+// `Models`.
+import { Action, Parts } from '../../models/Store';
+
+const initialState: Parts = {
   items: [
-    { name: 'first part', id: uuidv4(), status: true },
-    { name: 'second part', id: uuidv4(), status: false },
-    { name: 'third part', id: uuidv4(), status: true },
-    { name: 'fourth part', id: uuidv4(), status: false }
+    { name: 'first part', id: Date.now(), status: true },
+    { name: 'second part', id: Date.now(), status: false },
+    { name: 'third part', id: Date.now(), status: true },
+    { name: 'fourth part', id: Date.now(), status: false }
   ]
 };
 
-export default (state = initialState, action = {}) => {
+export default (state = initialState, action: Action = {}) => {
   switch (action.type) {
     case actionTypes.CREATE_PART:
       return {
