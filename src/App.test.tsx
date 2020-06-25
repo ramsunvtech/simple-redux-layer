@@ -7,9 +7,8 @@ import {
 // `Test` Component.
 import App from './App';
 
-jest.mock('./pages/Home', () => {
-  return null;
-});
+// Mock the Home Page.
+jest.mock('./pages/Home');
 
 describe('App', () => {
   afterEach(cleanup);

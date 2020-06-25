@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitForElement } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Home } from './Home';
 
 const loadParts = jest.fn();
@@ -12,7 +12,7 @@ describe("home", () => {
     expect(asFragment(HomeComponent)).toMatchSnapshot()
   });
 
-  it('should take a snapshot', async () => {
+  it('validate name', async () => {
     const HomeComponent = <Home loadParts={loadParts} parts={parts} />;
     const { getByTestId } = render(HomeComponent)
     const elem = getByTestId('name');

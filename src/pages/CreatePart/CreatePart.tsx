@@ -12,22 +12,22 @@ import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 
 // Tiny Redux.
-import { tinyConnect } from '../lib/tinyReactRedux';
+import { tinyConnect } from '../../lib/tinyReactRedux';
 
 // `Actions`.
-import * as actionTypes from '../store/actions/actionTypes';
+import * as actionTypes from '../../store/actions/actionTypes';
 
 // Stylesheet.
 import useStyles from './CreatePart.style';
 
 // `Models`.
-import Part from '../models/Part';
+import Part from '../../models/Part';
 
 interface CreatePartPageProps {
   createPart: (part: Part) => void;
 };
 
-const CreatePart: React.FC<CreatePartPageProps> = ({ createPart }) => {
+export const CreatePart: React.FC<CreatePartPageProps> = ({ createPart }) => {
   const classes = useStyles();
   const history = useHistory();
   const [checkStatus, setCheckStatus] = useState(true);

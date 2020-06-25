@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PartItem should have part name 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardContent-root"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h5"
+        data-testid="name"
+      >
+        first part
+      </h2>
+      <p
+        class="MuiTypography-root makeStyles-pos-3 MuiTypography-body1 MuiTypography-colorTextSecondary"
+      >
+        ID: 1592928182403
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body2"
+      >
+        Status: 
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

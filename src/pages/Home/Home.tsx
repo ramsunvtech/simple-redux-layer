@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import PartItem from '../components/PartItem';
 
 // `Material` Components.
 import Grid from '@material-ui/core/Grid';
+
+// `Local` Components.
+import PartItem from '../../components/PartItem/';
 
 // Stylesheet.
 import useStyles from './Home.style';
 
 // Tiny Redux.
-import { tinyConnect } from '../lib/tinyReactRedux';
+import { tinyConnect } from '../../lib/tinyReactRedux';
 
 // `Actions`.
-import * as actionTypes from '../store/actions/actionTypes';
+import * as actionTypes from '../../store/actions/actionTypes';
 
 // `Models`.
-import Part from '../models/Part';
-import { Store } from '../models/Store';
+import Part from '../../models/Part';
+import { Store } from '../../models/Store';
 
 interface HomePageProps {
   loadParts: () => Function;
@@ -39,7 +41,7 @@ export const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
     <Grid container data-testid="home">
       {partItemList.map((partItem: Part) => {
         return (
-          <Grid item xl={3} lg={2} className={classes.item}>
+          <Grid key={partItem.id} item xl={3} lg={2} className={classes.item}>
             <PartItem data-testid="item" name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
           </Grid>
         );

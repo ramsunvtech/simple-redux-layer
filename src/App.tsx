@@ -7,20 +7,22 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
 // `Local` Components.
-import CreatePart from './pages/CreatePart';
-import Home from './pages/Home';
-import Header from './components/Header';
-import theme from './theme/index';
+import Home from './pages/Home/';
+import CreatePart from './pages/CreatePart/';
+import Header from './components/Header/';
+
+// `Theme`.
+import theme from './theme/';
 
 // Store Libs.
-import store from './store/index';
+import store from './store/';
 
 // Initialize Store.
 store.initializeStore();
 
 function App() {
   return (
-    <Router basename="/simple-redux-layer/">
+    <Router basename="/simple-redux-layer">
       <ThemeProvider theme={theme}>
         <div className="App">
           <Header />

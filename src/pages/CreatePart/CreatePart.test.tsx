@@ -6,11 +6,11 @@ import {
 import '@testing-library/jest-dom/extend-expect';
 
 // `Test` Component.
-import CreatePart from './CreatePart';
+import { CreatePart } from './CreatePart';
 
-jest.mock('../lib/tinyReactRedux', () => {
+jest.mock('../../lib/tinyReactRedux', () => {
   return {
-    tinyConnect: (a, b) => (Component) => {
+    tinyConnect: (a, b) => (Component:any) => {
       return <Component createPart={() => {}} />
     },
   };

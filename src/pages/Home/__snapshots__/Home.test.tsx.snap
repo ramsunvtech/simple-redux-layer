@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiGrid-root MuiGrid-container"
+    data-testid="home"
+  >
+    <div
+      class="MuiGrid-root makeStyles-item-1 MuiGrid-item MuiGrid-grid-lg-2 MuiGrid-grid-xl-3"
+    >
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-root-2 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h5"
+            data-testid="name"
+          >
+            first part
+          </h2>
+          <p
+            class="MuiTypography-root makeStyles-pos-4 MuiTypography-body1 MuiTypography-colorTextSecondary"
+          >
+            ID: 1592928182403
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body2"
+          >
+            Status: Checked In
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

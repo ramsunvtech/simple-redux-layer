@@ -5,18 +5,17 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+// `Models`.
+import Part from '../../models/Part';
+
 // Stylesheet.
 import useStyles from './PartItem.style';
 
-const Part = ({
+const PartItem = ({
   name,
   id,
   status,
-}: {
-  name: string;
-  id: number;
-  status: string;
-}) => {
+}: Part) => {
   const classes = useStyles();
 
   return (
@@ -36,4 +35,4 @@ const Part = ({
   );
 }
 
-export default Part;
+export default PartItem;

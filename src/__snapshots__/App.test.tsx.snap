@@ -7,22 +7,24 @@ exports[`App should take a snapshot 1`] = `
   >
     <header
       class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+      data-testid="header"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
       >
         <h6
           class="MuiTypography-root MuiTypography-h6"
+          data-testid="title"
         >
           Simple Redux Layer
         </h6>
           -  
         <a
           href="/simple-redux-layer/"
-          style="color: white; text-decoration: none;"
         >
           <h6
             class="MuiTypography-root MuiTypography-h6"
+            data-testid="home"
           >
             Home
           </h6>
@@ -30,10 +32,10 @@ exports[`App should take a snapshot 1`] = `
           |  
         <a
           href="/simple-redux-layer/create"
-          style="color: white; text-decoration: none;"
         >
           <h6
             class="MuiTypography-root MuiTypography-h6"
+            data-testid="create"
           >
             Create Part
           </h6>
@@ -44,7 +46,7 @@ exports[`App should take a snapshot 1`] = `
       class="MuiContainer-root MuiContainer-maxWidthLg"
     >
       <div
-        class="MuiBox-root MuiBox-root-1"
+        class="MuiBox-root MuiBox-root-4"
       />
     </div>
   </div>

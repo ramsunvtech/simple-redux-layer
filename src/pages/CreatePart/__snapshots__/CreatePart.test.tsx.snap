@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreatePart should take a snapshot 1`] = `
+<DocumentFragment>
+  <form
+    autocomplete="off"
+    novalidate=""
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xl-12"
+      >
+        <h4
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
+        >
+          Create Part
+        </h4>
+      </div>
+      <div
+        class="MuiGrid-root makeStyles-nameField-1 MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-xl-5"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <label
+            class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+            data-shrink="false"
+            for="name"
+            id="name-label"
+          >
+            Name
+          </label>
+          <div
+            class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+            style="color: black;"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiInput-input"
+              id="name"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root makeStyles-statusField-2 MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-xl-12"
+      >
+        <label
+          class="MuiFormControlLabel-root"
+        >
+          <span
+            class="MuiSwitch-root"
+          >
+            <span
+              aria-disabled="false"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-checked-4 Mui-checked"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <input
+                  aria-label="primary checkbox"
+                  checked=""
+                  class="PrivateSwitchBase-input-6 MuiSwitch-input"
+                  name="switch"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="MuiSwitch-thumb"
+                />
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </span>
+            <span
+              class="MuiSwitch-track"
+            />
+          </span>
+          <span
+            class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+          >
+            Status
+          </span>
+        </label>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-xl-3"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
+          tabindex="0"
+          type="submit"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Create Part
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
