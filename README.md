@@ -1,6 +1,8 @@
 # Simple Redux Layer
 Simple Redux Layer in CRA
 
+[![CircleCI](https://img.shields.io/circleci/build/github/ramsunvtech/simple-redux-layer/master.svg)](https://app.circleci.com/pipelines/github/ramsunvtech/simple-redux-layer?branch=master)
+
 ## Desktop - Demo
 ### Home Page
 <p align="center">
