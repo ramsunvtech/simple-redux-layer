@@ -18,10 +18,6 @@ const PartItem = ({
 }: Part) => {
   const classes = useStyles();
 
-  const getStatusText = (status: boolean) => {
-    return (status) ? 'Checked In' : 'Checked Out';
-  }
-
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -32,7 +28,7 @@ const PartItem = ({
           ID: {id}
         </Typography>
         <Typography variant="body2" component="p">
-          Status: {getStatusText(status)}
+          Status: {status}
         </Typography>
       </CardContent>
     </Card>

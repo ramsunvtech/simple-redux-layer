@@ -1,4 +1,4 @@
-import { initStore, getStore, dispatch } from '../lib/tinyRedux';
+import { initStore, getStore, dispatch } from 'tiny-redux';
 
 // Reducers.
 import { parts } from './reducers';

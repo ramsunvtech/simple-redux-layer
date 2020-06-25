@@ -12,7 +12,7 @@ import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 
 // Tiny Redux.
-import { tinyConnect } from '../../lib/tinyReactRedux';
+import { tinyConnect } from 'tiny-redux';
 
 // `Actions`.
 import * as actionTypes from '../../store/actions/actionTypes';

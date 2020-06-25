@@ -10,7 +10,7 @@ import PartItem from '../../components/PartItem/';
 import useStyles from './Home.style';
 
 // Tiny Redux.
-import { tinyConnect } from '../../lib/tinyReactRedux';
+import { tinyConnect } from 'tiny-redux';
 
 // `Actions`.
 import * as actionTypes from '../../store/actions/actionTypes';
@@ -33,12 +33,16 @@ export const Home: React.FC<HomePageProps> = ({ loadParts, parts }) => {
     setPartList(parts);
   }, []);
 
+  const getStatusText = (status: boolean) => {
+    return (status) ? 'Checked In' : 'Checked Out';
+  }
+
   return (
     <Grid container data-testid="home">
       {partItemList.map((partItem: Part) => {
         return (
           <Grid key={partItem.id} item xl={3} lg={2} className={classes.item}>
-            <PartItem data-testid="item" name={partItem.name} id={partItem.id} status={partItem.status} />
+            <PartItem data-testid="item" name={partItem.name} id={partItem.id} status={getStatusText(partItem.status)} />
           </Grid>
         );
       })}

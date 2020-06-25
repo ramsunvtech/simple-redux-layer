@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
 // Stylesheet.
-import useStyles from './Header.style';
+import useStyles from '../PartItem/PartItem.style';
 
 const Header = () => {
   const classes = useStyles();
