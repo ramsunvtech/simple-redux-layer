@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "./static/js/main.32905479.chunk.js",
-    "main.js.map": "./static/js/main.32905479.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.6111cb5d.js",
-    "runtime-main.js.map": "./static/js/runtime-main.6111cb5d.js.map",
-    "static/js/2.a1f608cd.chunk.js": "./static/js/2.a1f608cd.chunk.js",
-    "static/js/2.a1f608cd.chunk.js.map": "./static/js/2.a1f608cd.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.9037bc63684d3aacf60640ff5f792425.js": "./precache-manifest.9037bc63684d3aacf60640ff5f792425.js",
-    "service-worker.js": "./service-worker.js",
-    "static/js/2.a1f608cd.chunk.js.LICENSE.txt": "./static/js/2.a1f608cd.chunk.js.LICENSE.txt"
+    "main.js": "/simple-redux-layer/static/js/main.622778bd.chunk.js",
+    "main.js.map": "/simple-redux-layer/static/js/main.622778bd.chunk.js.map",
+    "runtime-main.js": "/simple-redux-layer/static/js/runtime-main.4cfbc9a4.js",
+    "runtime-main.js.map": "/simple-redux-layer/static/js/runtime-main.4cfbc9a4.js.map",
+    "static/js/2.663c53a1.chunk.js": "/simple-redux-layer/static/js/2.663c53a1.chunk.js",
+    "static/js/2.663c53a1.chunk.js.map": "/simple-redux-layer/static/js/2.663c53a1.chunk.js.map",
+    "index.html": "/simple-redux-layer/index.html",
+    "precache-manifest.e66a0b28b7b426d96419ad2f70b8d002.js": "/simple-redux-layer/precache-manifest.e66a0b28b7b426d96419ad2f70b8d002.js",
+    "service-worker.js": "/simple-redux-layer/service-worker.js",
+    "static/js/2.663c53a1.chunk.js.LICENSE.txt": "/simple-redux-layer/static/js/2.663c53a1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6111cb5d.js",
-    "static/js/2.a1f608cd.chunk.js",
-    "static/js/main.32905479.chunk.js"
+    "static/js/runtime-main.4cfbc9a4.js",
+    "static/js/2.663c53a1.chunk.js",
+    "static/js/main.622778bd.chunk.js"
   ]
 }
