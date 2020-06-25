@@ -22,7 +22,7 @@ exports[`PartItem should have part name 1`] = `
       <p
         class="MuiTypography-root MuiTypography-body2"
       >
-        Status: 
+        Status: Checked In
       </p>
     </div>
   </div>

@@ -20,6 +20,7 @@ exports[`App should take a snapshot 1`] = `
         </h6>
           -  
         <a
+          class="makeStyles-topLink-1"
           href="/simple-redux-layer/"
         >
           <h6
@@ -31,6 +32,7 @@ exports[`App should take a snapshot 1`] = `
         </a>
           |  
         <a
+          class="makeStyles-topLink-1"
           href="/simple-redux-layer/create"
         >
           <h6
@@ -46,7 +48,7 @@ exports[`App should take a snapshot 1`] = `
       class="MuiContainer-root MuiContainer-maxWidthLg"
     >
       <div
-        class="MuiBox-root MuiBox-root-4"
+        class="MuiBox-root MuiBox-root-2"
       />
     </div>
   </div>
